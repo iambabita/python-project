@@ -1,0 +1,23 @@
+import turtle
+import colorsys
+
+turtle.setup(1200, 1000)
+turtle.speed(0)
+turtle.tracer(5)
+turtle.bgcolor("black")
+
+times = 24
+
+for i in range(times):
+    radius = 240 - i * 4
+    for j in range(times):
+        # HSV → RGB
+        color = colorsys.hsv_to_rgb(i / times, 1, 1)
+        turtle.color(color)
+
+        turtle.circle(radius)
+        radius -= 8
+        turtle.right(30)
+
+turtle.hideturtle()
+turtle.done()
